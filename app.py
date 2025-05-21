@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import sqlite3
 
-# Part 1: Web Scraping to create DF1
+# Web Scraping to create df1
 def scrape_covid_data():
     url = 'https://www.worldometers.info/coronavirus/'
     response = requests.get(url)
@@ -29,7 +29,7 @@ def scrape_covid_data():
 
     return df1
 
-# Part 2: API Requests to create DF2
+# API Requests to create DF2
 def get_covid_api_data(country):
     url = "https://covid-19-data.p.rapidapi.com/country"
     querystring = {"name": country}
@@ -88,7 +88,7 @@ def main():
     print("\nDescriptive Statistics:")
     print(df3.describe())
 
-    # Export to CSV
+    # Export it to CSV
     df3.to_csv('covid_combined_data.csv', index=False)
     print("\nData exported to covid_combined_data.csv")
 
